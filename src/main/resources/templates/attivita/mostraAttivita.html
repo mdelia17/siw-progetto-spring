@@ -1,0 +1,130 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8" />
+
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Attivita</title>
+    
+    
+    <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+   
+   
+   <!-- JavaScript -->
+   <script src="/assets/js/modernizr-1.7.min.js"></script>
+   <script src="/assets/js/jquery-1.7.1.min.js"></script>
+
+
+    <!-- Style -->
+    <link href="/assets/style.css" rel="stylesheet" />
+    <link href="/assets/css/responsive.css" rel="stylesheet" />
+    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+ 
+</head>
+<body>
+<div id="wrapper">
+
+    <header id="header">
+    
+            <h1 id="site-title">Attivita</h1>
+            
+             <div class="btn-responsive-menu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </div>
+
+    </header>    
+    <div id="mainmenu">
+	 	<ul>
+	 		<li><a href="/">Home</a>
+        	<li><a th:href="@{'/centro/' + ${centroid} + '/attivitas'}">Lista Attività</a></li>
+        	<li></li>
+        </ul>
+	</div> <!-- #mainmenu -->
+    
+	<div id="main">
+
+    <!-- Prompt IE 6 and 7 users to install Chrome Frame:		chromium.org/developers/how-tos/chrome-frame-getting-started -->
+    <!--[if lt IE 8]>
+        <p class="chromeframe alert alert-warning">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
+    <![endif]--> 
+
+		<aside id="sidebar">
+		
+    	</aside> <!-- #sidebar -->
+    	
+		<div id="content">
+		
+			<hr/>
+            
+            <article class="post">
+    			<div>Nome: <span th:text="${attivita.nome}"></span></div>
+    			<div>Descrizione: <span th:text="${attivita.descrizione}"></span></div>
+    			<div>Data: <span th:text="${attivita.dataInizio}"></span></div>
+    			<div>Orario: <span th:text="${attivita.oraInizio}"></span></div>
+    			<br>
+    			<div><a th:href="@{'/centro/' + ${centroid} + '/attivita/' + ${attivitaid} + '/iscriviAllievo'}">Iscrivi Allievo</a></div>
+
+    			<br>
+    			
+    			<p><a th:href="@{'/centro/' + ${centroid} + '/attivita/' + ${attivitaid} + '/allievi'}">Visualizza allievi iscritti</a></p>
+    			
+
+            </article>
+            
+            <hr/> 
+
+    	</div> <!-- #content -->
+    
+    
+	</div> <!-- #main -->
+
+
+ 	<footer id="footer">
+      
+        <p>Copyright &copy; 2018 <a href="#"> Responsive Web Site</a></p>
+        
+    </footer> <!-- #footer -->
+    
+    <div class="clear"></div>
+
+</div> <!-- #wrapper -->
+
+   
+   <script>
+  	$(document).ready(function(){   
+	    
+			
+			//When btn is clicked
+			$(".btn-responsive-menu").click(function() {
+			  	$("#mainmenu").toggleClass("show");
+
+				
+
+			});
+
+		
+			
+			// When resize
+			$(window).resize(function () {
+				if ($(window).width() > 767) {
+					$("#mainmenu").show();
+				} else {
+					$("#mainmenu").hide();
+				}
+			});
+	
+	});
+	
+	
+   </script>
+			
+</body>
+</html>

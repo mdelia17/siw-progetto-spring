@@ -1,0 +1,62 @@
+#wrapper        {width: 960px;margin: 0 auto;background:#fff;}
+
+#header         {width: 920px;float:left;padding: 20px 20px 20px 20px; background:#21aabd;}
+
+#mainmenu       {width: 100%;float:left;background: #888}
+
+#main           {width: 920px;float:left;padding: 20px 20px 20px 20px;}
+
+#content        {width: 620px;float:left;}
+
+#sidebar        {width: 270px;float:right;}
+
+#footer         {width: 920px;float:left;padding: 30px 20px 10px 20px;background:#666;}
+
+
+/* Media queries */
+
+@media (min-width: 768px) and (max-width: 980px) {
+/* Structure 768 to 980 */
+#wrapper        {width: 748px;margin: 0 auto;}
+#header         {width: 708px;float:left;padding: 20px 20px 20px 20px;}
+#mainmenu       {width: 100%;float:left;}
+#main           {width: 708px;float:left;padding: 20px 20px 20px 20px;}
+#content        {width: 470px;float:left;}
+#sidebar        {width: 210px;float:right;}
+#footer         {width: 708px;float:left;padding: 30px 20px 10px 20px;}
+#mainmenu       {display:block;}
+}
+
+@media (max-width: 767px) {
+/* Structure  < 767 */
+body{padding:10px;background:#fff;}
+#wrapper        {width:100%;margin: 0 auto;}
+#header         {width:100%;padding: 20px 0 20px 0px;}
+#mainmenu       {width:100%;float:left;}
+#main           {width:100%;float:left;padding: 20px 0 0 0;}
+#content        {width:100%;float:left;}
+#sidebar        {width:100%;float:right;padding: 20px 0 0 0px;}
+#footer         {width:100%;float:left;padding: 20px 0 0 0px;}
+/* Header */
+.search{display:none;}
+.btn-responsive-menu{display:block;}
+#mainmenu           {display:none;}
+#mainmenu ul li     {float: none;}
+/* Sidebar */
+.widget{width:48%;float:left;}
+.widget:first-child{margin-right:4%;!important}
+#site-title a {font-size:25px;margin-left:10px;}
+#footer p     {margin-left:10px;}
+}
+
+@media (min-width: 1200px) {
+/* Structure > 1200px */
+#wrapper        {width: 1170px;margin: 0 auto;}
+#header         {width: 1130px;float:left;padding: 20px 20px 20px 20px;}
+#mainmenu       {width: 100%;float:left;}
+#main           {width: 1130px;float:left;padding: 20px 20px 20px 20px;}
+#content        {width: 670px;float:left;}
+#sidebar        {width: 420px;float:right;}
+#footer         {width: 1130px;float:left;padding: 30px 20px 10px 20px;}
+#mainmenu       {display:block;}
+}

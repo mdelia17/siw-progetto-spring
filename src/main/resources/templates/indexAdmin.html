@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]> <html class="no-js" lang="en"> <![endif]-->
+<head>
+    <meta charset="utf-8" />
+
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Azienda</title>
+    
+    
+    <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+   
+   
+   <!-- JavaScript -->
+   <script src="/assets/js/modernizr-1.7.min.js"></script>
+   <script src="/assets/js/jquery-1.7.1.min.js"></script>
+   
+   <script>
+  	$(document).ready(function(){   
+	    
+			
+			//When btn is clicked
+			$(".btn-responsive-menu").click(function() {
+			  	$("#mainmenu").toggleClass("show");
+
+				
+
+			});
+
+		
+			
+			// When resize
+			$(window).resize(function () {
+				if ($(window).width() > 767) {
+					$("#mainmenu").show();
+				} else {
+					$("#mainmenu").hide();
+				}
+			});
+	
+	});
+	
+	
+   </script>
+
+    <!-- Style -->
+    <link href="/assets/style.css" rel="stylesheet" />
+    <link href="/assets/css/responsive.css" rel="stylesheet" />
+    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+ 
+</head>
+<body>
+<div id="wrapper">
+
+    <header id="header">
+    
+            <h1 id="site-title">Azienda</h1>
+            
+             <div class="btn-responsive-menu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </div>
+
+    </header> <!-- #header -->
+    
+    <div id="mainmenu">
+    	<form action="#" th:action="@{/logout}" method="post">
+	 	<ul>
+        	<li><a th:href="@{/centri}">Lista Centri</a></li>
+			<li><a th:href="@{/allievi}">Lista Allievi</a></li>
+			<li><a th:href="@{/aggiungiCentro}">Registra Centro</a></li>
+			<li><a th:href="@{/aggiungiResponsabile}">Registra Responsabile</a></li>
+			<li><input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/></li>
+			<li><input id="pulsante" type="submit" value="Logout" /></li>
+        </ul>
+ 		</form>
+	</div> <!-- #mainmenu -->
+    
+	<div id="main">
+
+    <!-- Prompt IE 6 and 7 users to install Chrome Frame:		chromium.org/developers/how-tos/chrome-frame-getting-started -->
+    <!--[if lt IE 8]>
+        <p class="chromeframe alert alert-warning">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
+    <![endif]--> 
+
+		<aside id="sidebar">
+        
+    	</aside> <!-- #sidebar -->
+    	
+		<div id="content">
+
+			<hr />
+
+            <article class="post">
+            Nome: <br>
+            Indirizzo: <br>
+            Responsabile: <br>
+            </article> <!-- .post  -->
+            
+            <hr /> 
+
+    	</div> <!-- #content -->
+    
+    
+	</div> <!-- #main -->
+
+
+ 	<footer id="footer">
+      
+        <p>Copyright &copy; 2018 <a href="#"> Responsive Web Site</a></p>
+        
+    </footer> <!-- #footer -->
+    
+    <div class="clear"></div>
+
+</div> <!-- #wrapper -->
+
+</body>
+</html>
